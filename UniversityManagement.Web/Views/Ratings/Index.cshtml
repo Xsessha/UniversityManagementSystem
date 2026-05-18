@@ -1,0 +1,93 @@
+@model IEnumerable<UniversityManagement.Core.Models.Student>
+
+@{
+    ViewData["Title"] = "Ratings";
+}
+
+<div class="page-header">
+
+    <h2>Student Ratings</h2>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <table class="table table-hover">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Student</th>
+                    <th>Group</th>
+                    <th>Rating</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var student in Model)
+            {
+                <tr>
+
+                    <td>
+                        @student.FirstName
+                        @student.LastName
+                    </td>
+
+                    <td>
+                        @student.Group?.Name
+                    </td>
+
+                    <td>
+
+                        <div class="progress">
+
+                            <div class="progress-bar"
+                                 role="progressbar"
+                                 style="width:@student.Rating%">
+
+                                @student.Rating
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+
+                        @if (student.Rating >= 90)
+                        {
+                            <span class="badge bg-success">
+                                Excellent
+                            </span>
+                        }
+                        else if (student.Rating >= 75)
+                        {
+                            <span class="badge bg-warning">
+                                Good
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">
+                                Needs Improvement
+                            </span>
+                        }
+
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

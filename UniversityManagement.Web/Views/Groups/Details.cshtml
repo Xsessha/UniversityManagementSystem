@@ -1,0 +1,69 @@
+@model UniversityManagement.Core.Models.Group
+
+@{
+    ViewData["Title"] = "Group Details";
+}
+
+<div class="card shadow-lg">
+
+    <div class="card-body">
+
+        <div class="d-flex justify-content-between">
+
+            <h2>
+                @Model.Name
+            </h2>
+
+            <span class="badge bg-success fs-6">
+                @Model.Students.Count Students
+            </span>
+
+        </div>
+
+        <hr/>
+
+        <table class="table table-hover">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>Rating</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var student in Model.Students)
+            {
+                <tr>
+
+                    <td>
+                        @student.FirstName
+                        @student.LastName
+                    </td>
+
+                    <td>
+                        @student.Email
+                    </td>
+
+                    <td>
+
+                        <span class="badge bg-primary">
+                            @student.Rating
+                        </span>
+
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

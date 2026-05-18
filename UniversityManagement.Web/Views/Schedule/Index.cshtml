@@ -1,0 +1,75 @@
+@model IEnumerable<UniversityManagement.Core.Models.Schedule>
+
+@{
+    ViewData["Title"] = "Schedule";
+}
+
+<div class="page-header d-flex justify-content-between align-items-center">
+
+    <h2>Schedule</h2>
+
+    <a href="/Schedule/CreateLesson"
+       class="btn btn-primary">
+        Create Lesson
+    </a>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Course</th>
+                    <th>Teacher</th>
+                    <th>Group</th>
+                    <th>Date</th>
+                    <th>Lesson Type</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var lesson in Model)
+            {
+                <tr>
+
+                    <td>
+                        @lesson.Course?.Name
+                    </td>
+
+                    <td>
+                        @lesson.Teacher?.FullName
+                    </td>
+
+                    <td>
+                        @lesson.Group?.Name
+                    </td>
+
+                    <td>
+                        @lesson.Date.ToString("dd.MM.yyyy HH:mm")
+                    </td>
+
+                    <td>
+
+                        <span class="badge bg-info">
+                            @lesson.LessonType
+                        </span>
+
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

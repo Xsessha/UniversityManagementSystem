@@ -1,0 +1,50 @@
+@model RegisterViewModel
+
+<div class="auth-container">
+
+    <div class="auth-card shadow">
+
+        <h2 class="mb-4 text-center">
+            Register
+        </h2>
+
+        <form asp-action="Register">
+
+            <div class="mb-3">
+
+                <label>Full Name</label>
+
+                <input asp-for="FullName"
+                       class="form-control"/>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Email</label>
+
+                <input asp-for="Email"
+                       class="form-control"/>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Password</label>
+
+                <input asp-for="Password"
+                       type="password"
+                       class="form-control"/>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-success w-100">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

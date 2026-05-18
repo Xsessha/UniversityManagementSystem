@@ -1,0 +1,37 @@
+@model UniversityManagement.Core.Models.Student
+
+<div class="card shadow">
+
+    <div class="card-body text-center">
+
+        <h2 class="text-danger mb-4">
+            Delete Student
+        </h2>
+
+        <p>
+            Are you sure you want to delete
+            <strong>
+                @Model.FirstName @Model.LastName
+            </strong>?
+        </p>
+
+        <form asp-action="DeleteConfirmed">
+
+            <input type="hidden"
+                   asp-for="Id"/>
+
+            <button type="submit"
+                    class="btn btn-danger">
+                Delete
+            </button>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Cancel
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+@model UniversityManagement.Core.Models.Course
+
+<div class="card shadow-lg">
+
+    <div class="card-body">
+
+        <h2>@Model.Name</h2>
+
+        <hr/>
+
+        <p>
+            <strong>Credits:</strong>
+            @Model.Credits
+        </p>
+
+        <p>
+            <strong>Teacher:</strong>
+            @Model.Teacher?.FullName
+        </p>
+
+    </div>
+
+</div>

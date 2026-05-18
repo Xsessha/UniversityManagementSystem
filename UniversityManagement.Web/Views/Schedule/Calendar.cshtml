@@ -1,0 +1,178 @@
+@model IEnumerable<UniversityManagement.Core.Models.Schedule>
+
+@{
+    ViewData["Title"] = "Academic Calendar";
+}
+
+<div class="calendar-page">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h1 class="fw-bold">
+                Academic Calendar
+            </h1>
+
+            <p class="text-muted">
+                Interactive university lesson schedule
+            </p>
+
+        </div>
+
+        <div>
+
+            <a href="/Schedule/CreateLesson"
+               class="btn btn-primary">
+                Add Lesson
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-body">
+
+            <div id="calendar-container">
+
+                <table class="table table-bordered align-middle text-center">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th style="width: 120px;">
+                                Time
+                            </th>
+
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td class="fw-bold">
+                                08:30
+                            </td>
+
+                            <td>
+
+                                <div class="lesson-card bg-primary text-white">
+
+                                    <strong>
+                                        Mathematics
+                                    </strong>
+
+                                    <br/>
+
+                                    CS-21
+
+                                </div>
+
+                            </td>
+
+                            <td></td>
+
+                            <td>
+
+                                <div class="lesson-card bg-success text-white">
+
+                                    <strong>
+                                        Programming
+                                    </strong>
+
+                                    <br/>
+
+                                    CS-22
+
+                                </div>
+
+                            </td>
+
+                            <td></td>
+
+                            <td>
+
+                                <div class="lesson-card bg-warning text-dark">
+
+                                    <strong>
+                                        Databases
+                                    </strong>
+
+                                    <br/>
+
+                                    CS-23
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="fw-bold">
+                                10:20
+                            </td>
+
+                            <td></td>
+
+                            <td>
+
+                                <div class="lesson-card bg-danger text-white">
+
+                                    <strong>
+                                        Physics
+                                    </strong>
+
+                                    <br/>
+
+                                    EN-11
+
+                                </div>
+
+                            </td>
+
+                            <td></td>
+
+                            <td>
+
+                                <div class="lesson-card bg-info text-dark">
+
+                                    <strong>
+                                        Algorithms
+                                    </strong>
+
+                                    <br/>
+
+                                    CS-31
+
+                                </div>
+
+                            </td>
+
+                            <td></td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

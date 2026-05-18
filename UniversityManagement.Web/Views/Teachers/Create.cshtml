@@ -1,0 +1,47 @@
+@model UniversityManagement.Core.Models.Teacher
+
+@{
+    ViewData["Title"] = "Create Teacher";
+}
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h2 class="mb-4">
+            Create Teacher
+        </h2>
+
+        <form asp-action="Create">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Full Name
+                </label>
+
+                <input asp-for="FullName"
+                       class="form-control"/>
+
+            </div>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Department
+                </label>
+
+                <input asp-for="Department"
+                       class="form-control"/>
+
+            </div>
+
+            <button class="btn btn-success">
+                Create Teacher
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+@model IEnumerable<UniversityManagement.Core.Models.Faculty>
+
+@{
+    ViewData["Title"] = "Faculties";
+}
+
+<div class="page-header">
+
+    <h2>Faculties</h2>
+
+</div>
+
+<div class="row">
+
+@foreach (var faculty in Model)
+{
+    <div class="col-md-4 mb-4">
+
+        <div class="card faculty-card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h4 class="text-primary">
+                    @faculty.Name
+                </h4>
+
+                <hr/>
+
+                <p>
+                    <strong>Groups:</strong>
+                    @faculty.Groups.Count
+                </p>
+
+                <p>
+                    <strong>Students:</strong>
+                    @faculty.Groups.Sum(g => g.Students.Count)
+                </p>
+
+                <a asp-action="Details"
+                   asp-route-id="@faculty.Id"
+                   class="btn btn-outline-primary w-100">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+}
+
+</div>

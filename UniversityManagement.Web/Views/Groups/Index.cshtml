@@ -1,0 +1,62 @@
+@model IEnumerable<UniversityManagement.Core.Models.Group>
+
+<div class="page-header">
+
+    <h2>Groups</h2>
+
+    <a asp-action="Create"
+       class="btn btn-primary">
+        Create Group
+    </a>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <table class="table table-hover">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Name</th>
+                    <th>Faculty</th>
+                    <th>Students</th>
+                    <th></th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var group in Model)
+            {
+                <tr>
+
+                    <td>@group.Name</td>
+
+                    <td>@group.Faculty?.Name</td>
+
+                    <td>@group.Students.Count</td>
+
+                    <td>
+
+                        <a asp-action="Details"
+                           asp-route-id="@group.Id"
+                           class="btn btn-info btn-sm">
+                            Details
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

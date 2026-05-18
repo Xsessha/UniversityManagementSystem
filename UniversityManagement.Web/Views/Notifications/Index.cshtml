@@ -1,0 +1,28 @@
+@model IEnumerable<UniversityManagement.Core.Models.Notification>
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h2 class="mb-4">
+            Notifications
+        </h2>
+
+        @foreach (var notification in Model)
+        {
+            <div class="alert alert-primary">
+
+                <strong>
+                    @notification.CreatedAt.ToShortDateString()
+                </strong>
+
+                <p class="mb-0">
+                    @notification.Message
+                </p>
+
+            </div>
+        }
+
+    </div>
+
+</div>

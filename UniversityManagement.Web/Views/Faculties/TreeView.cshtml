@@ -1,0 +1,41 @@
+@model IEnumerable<UniversityManagement.Core.Models.Faculty>
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h2 class="mb-4">
+            Faculty Structure
+        </h2>
+
+        @foreach (var faculty in Model)
+        {
+            <div class="mb-4">
+
+                <h4 class="text-primary">
+                    @faculty.Name
+                </h4>
+
+                <ul class="list-group">
+
+                    @foreach (var group in faculty.Groups)
+                    {
+                        <li class="list-group-item">
+
+                            @group.Name
+
+                            <span class="badge bg-secondary float-end">
+                                @group.Students.Count Students
+                            </span>
+
+                        </li>
+                    }
+
+                </ul>
+
+            </div>
+        }
+
+    </div>
+
+</div>

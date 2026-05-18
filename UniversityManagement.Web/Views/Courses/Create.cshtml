@@ -1,0 +1,38 @@
+@model UniversityManagement.Core.Models.Course
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h2>Create Course</h2>
+
+        <form asp-action="Create">
+
+            <div class="mb-3">
+
+                <label>Name</label>
+
+                <input asp-for="Name"
+                       class="form-control"/>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Credits</label>
+
+                <input asp-for="Credits"
+                       class="form-control"/>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-success">
+                Create
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

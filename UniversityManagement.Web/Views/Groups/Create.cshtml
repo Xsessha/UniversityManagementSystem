@@ -1,0 +1,52 @@
+@model UniversityManagement.Core.Models.Group
+
+@{
+    ViewData["Title"] = "Create Group";
+}
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h2 class="mb-4">
+            Create Group
+        </h2>
+
+        <form asp-action="Create">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Group Name
+                </label>
+
+                <input asp-for="Name"
+                       class="form-control"/>
+
+            </div>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Faculty
+                </label>
+
+                <select class="form-select">
+
+                    <option>Computer Science</option>
+                    <option>Economics</option>
+                    <option>Law</option>
+
+                </select>
+
+            </div>
+
+            <button class="btn btn-success">
+                Create Group
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

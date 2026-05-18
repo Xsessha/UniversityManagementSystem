@@ -1,0 +1,45 @@
+@model IEnumerable<UniversityManagement.Core.Models.Student>
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h2 class="mb-4">
+            Top Students
+        </h2>
+
+        <div class="row">
+
+            @foreach (var student in Model)
+            {
+                <div class="col-md-4 mb-4">
+
+                    <div class="card border-0 shadow-sm">
+
+                        <div class="card-body text-center">
+
+                            <img src="/images/students/default.png"
+                                 width="80"
+                                 class="rounded-circle mb-3"/>
+
+                            <h5>
+                                @student.FirstName
+                                @student.LastName
+                            </h5>
+
+                            <span class="badge bg-success">
+                                @student.Rating
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

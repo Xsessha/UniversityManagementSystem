@@ -1,4 +1,8 @@
-@model RegisterViewModel
+@model UniversityManagement.Web.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
 
 <div class="auth-container">
 
@@ -8,33 +12,58 @@
             Register
         </h2>
 
-        <form asp-action="Register">
+        <form asp-controller="Account"
+              asp-action="Register"
+              method="post">
+
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="All"
+                 class="text-danger mb-3">
+            </div>
 
             <div class="mb-3">
 
-                <label>Full Name</label>
+                <label asp-for="FullName"
+                       class="form-label">
+                </label>
 
                 <input asp-for="FullName"
-                       class="form-control"/>
+                       class="form-control" />
+
+                <span asp-validation-for="FullName"
+                      class="text-danger">
+                </span>
 
             </div>
 
             <div class="mb-3">
 
-                <label>Email</label>
+                <label asp-for="Email"
+                       class="form-label">
+                </label>
 
                 <input asp-for="Email"
-                       class="form-control"/>
+                       class="form-control" />
+
+                <span asp-validation-for="Email"
+                      class="text-danger">
+                </span>
 
             </div>
 
             <div class="mb-3">
 
-                <label>Password</label>
+                <label asp-for="Password"
+                       class="form-label">
+                </label>
 
                 <input asp-for="Password"
-                       type="password"
-                       class="form-control"/>
+                       class="form-control" />
+
+                <span asp-validation-for="Password"
+                      class="text-danger">
+                </span>
 
             </div>
 
@@ -48,3 +77,7 @@
     </div>
 
 </div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

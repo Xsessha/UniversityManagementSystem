@@ -1,0 +1,14 @@
+.lesson-card {
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#calendar-container {
+    overflow-x: auto;
+}
+
+.table td {
+    height: 100px;
+}

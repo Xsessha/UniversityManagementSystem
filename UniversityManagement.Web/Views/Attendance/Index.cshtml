@@ -44,7 +44,7 @@
 
                     <td>
 
-                        @if (attendance.IsPresent)
+                        @if (attendance.Status == UniversityManagement.Core.Enums.AttendanceStatus.Present)
                         {
                             <span class="badge bg-success">
                                 Present

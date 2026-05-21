@@ -1,74 +1,11 @@
-@{
-    ViewData["Title"] = "Dashboard";
-}
+<div class="container mt-5">
 
-<div class="dashboard-header">
+    <h1>
+        Dashboard
+    </h1>
 
-    <h1>Dashboard</h1>
-
-</div>
-
-<div class="row">
-
-    <div class="col-md-3">
-
-        <div class="dashboard-card">
-
-            <h5>Total Students</h5>
-
-            <h2>@ViewBag.Students</h2>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-3">
-
-        <div class="dashboard-card">
-
-            <h5>Total Teachers</h5>
-
-            <h2>@ViewBag.Teachers</h2>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-3">
-
-        <div class="dashboard-card">
-
-            <h5>Total Courses</h5>
-
-            <h2>@ViewBag.Courses</h2>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-3">
-
-        <div class="dashboard-card">
-
-            <h5>Total Groups</h5>
-
-            <h2>@ViewBag.Groups</h2>
-
-        </div>
-
-    </div>
+    <p>
+        Login successful.
+    </p>
 
 </div>
-
-<div class="card mt-5 shadow">
-
-    <div class="card-body">
-
-        <canvas id="ratingChart"></canvas>
-
-    </div>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="~/js/charts.js"></script>
